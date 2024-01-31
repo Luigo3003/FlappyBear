@@ -9,6 +9,8 @@ public class PoolScript : MonoBehaviour
 
     [SerializeField] private GameObject PoolPrefab;
     [SerializeField] private int StartingNumberofObjects;
+    [SerializeField] private int Damage;
+    [SerializeField] private float despawnTimer;
 
 
     private void Awake()
@@ -44,12 +46,23 @@ public class PoolScript : MonoBehaviour
     {
         if (availableObjectpoolList.Count != 0)
         {
-            return availableObjectpoolList[0];
+            GameObject requestedObject = availableObjectpoolList[0];
+            availableObjectpoolList.RemoveAt(0);
+            activepoolList.Add(requestedObject);
+            return requestedObject;
         }
 
         else
         {
-            return null;
+            CreateObject(1);
+            return RequestObject(); ;
         }
+    }
+
+    public void TurnOffObjects(GameObject objectToDespawn)
+    {
+        objectToDespawn.SetActive(false);
+        availableObjectpoolList.Add(objectToDespawn);
+        activepoolList.Remove(objectToDespawn);
     }
 }

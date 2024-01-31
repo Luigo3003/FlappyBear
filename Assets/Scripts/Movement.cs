@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         MyInputMap = new Controller();
+        bulletPool = GameObject.Find("BulletPool").GetComponent<PoolScript>();
     }
     void Start()
     {
@@ -40,6 +41,8 @@ public class Movement : MonoBehaviour
     }
     private void Shoot(InputAction.CallbackContext context)
     {
-        Debug.Log("Shoot");
+        GameObject bullet = bulletPool.RequestObject();
+        bullet.SetActive(true);
+        bullet.transform.position = transform.position;
     }
 }

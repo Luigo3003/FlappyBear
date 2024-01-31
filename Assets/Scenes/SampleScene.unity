@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PoolPrefab: {fileID: 53150450038716784, guid: 781dcb1cca0497742aea348103651597, type: 3}
   StartingNumberofObjects: 10
+  Damage: 0
+  despawnTimer: 0
 --- !u!4 &1626279882
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae07c94e97b924c48b316418f0aae68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 10
 --- !u!212 &1998774069
 SpriteRenderer:
   m_ObjectHideFlags: 0
