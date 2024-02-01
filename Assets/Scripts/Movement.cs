@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
 
 
     }
+
     private void Shoot(InputAction.CallbackContext context)
     {
         GameObject bullet = bulletPool.RequestObject();

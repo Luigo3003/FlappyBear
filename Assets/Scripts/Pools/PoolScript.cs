@@ -9,7 +9,6 @@ public class PoolScript : MonoBehaviour
 
     [SerializeField] private GameObject PoolPrefab;
     [SerializeField] private int StartingNumberofObjects;
-    [SerializeField] private int Damage;
     [SerializeField] private float despawnTimer;
 
 
