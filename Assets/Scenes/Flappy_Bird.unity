@@ -720,6 +720,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5621791205261970488, guid: c61a745ff1c226e4fa11d8c419479ba6, type: 3}
+      propertyPath: WallObject
+      value: 
+      objectReference: {fileID: 140076160}
     - target: {fileID: 5689677297294062304, guid: c61a745ff1c226e4fa11d8c419479ba6, type: 3}
       propertyPath: m_Name
       value: WallUp
@@ -891,6 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
+  WallObject: {fileID: 0}
   GameRunning: 0
 --- !u!50 &6346523914062875108
 Rigidbody2D:
@@ -926,6 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
+  WallObject: {fileID: 0}
   GameRunning: 0
 --- !u!61 &6346523914062875113
 BoxCollider2D:
@@ -998,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2950896872419645856, guid: a4cc99ab6f9335145b8ab097ecd5ed21, type: 3}
+      propertyPath: WallObject
+      value: 
+      objectReference: {fileID: 147317333}
     - target: {fileID: 7656837044881632015, guid: a4cc99ab6f9335145b8ab097ecd5ed21, type: 3}
       propertyPath: m_RootOrder
       value: 4
