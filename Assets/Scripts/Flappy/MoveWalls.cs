@@ -6,28 +6,28 @@ public class MoveWalls : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed = 0;
     private Rigidbody2D WallRB2D;
-    private Collider2D WallCol;
-   [SerializeField] private GameObject WallObject;
-    public bool GameRunning = true;
+    [SerializeField] private GameObject WallObject;
+    [SerializeField] private float TimeActive;
+    private float despawnTimer = 0;
     void Start()
     {
         WallRB2D = GetComponent<Rigidbody2D>();
-        WallCol = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-            WallRB2D.velocity = Vector2.left * MoveSpeed;  
-    }
+        WallRB2D.velocity = Vector2.left * MoveSpeed;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Destroyer"))
+        despawnTimer += Time.deltaTime;
+
+        if (despawnTimer >= TimeActive)
         {
-            print("Destroyer meet");
-            Destroy(WallObject);
+            transform.parent.GetComponent<PoolScript>().TurnOffObjects(gameObject);
+            despawnTimer = 0;
         }
     }
+
+
 
 }

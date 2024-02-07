@@ -16,8 +16,6 @@ public class PoolScript : MonoBehaviour
     {
         availableObjectpoolList = new List<GameObject>();
         activepoolList = new List<GameObject>();
-
-      
     }
     void Start()
     {
